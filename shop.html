@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grayscale - Our Designs</title>
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 0; background: #fff; color: #111; }
+    header { text-align: center; padding: 2rem; font-size: 2rem; font-weight: bold; }
+    .designs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .design {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .design img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .design h3 { margin-top: 1rem; }
+    .design p { margin: 0.5rem 0 1rem; }
+    .design a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>Our Designs</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="designs.html">Our Designs</a>
+  </nav>
+
+  <section class="designs">
+    <div class="design">
+      <img src="https://via.placeholder.com/300x300?text=Design+1" alt="Design 1" />
+      <h3>Minimal Vibes</h3>
+      <p>Price: ₹1800</p>
+      <a href="https://razorpay.me/@grayscale?amount=W7qx%2B%2FRCGtKrOvbdFyMe5Q%3D%3D" target="_blank">Buy Now</a>
+    </div>
+    <div class="design">
+      <img src="https://via.placeholder.com/300x300?text=Design+2" alt="Design 2" />
+      <h3>Bold Edge</h3>
+      <p>Price: ₹1800</p>
+      <a href="https://razorpay.me/@grayscale?amount=W7qx%2B%2FRCGtKrOvbdFyMe5Q%3D%3D" target="_blank">Buy Now</a>
+    </div>
+    <div class="design">
+      <img src="https://via.placeholder.com/300x300?text=Design+3" alt="Design 3" />
+      <h3>Street Fusion</h3>
+      <p>Price: ₹1800</p>
+      <a href="https://razorpay.me/@grayscale?amount=W7qx%2B%2FRCGtKrOvbdFyMe5Q%3D%3D" target="_blank">Buy Now</a>
+    </div>
+
+    <!-- Bundles -->
+    <div class="design" style="grid-column: span 3;">
+      <h3>Buy Any 2 Designs - ₹3300</h3>
+      <a href="https://razorpay.me/@grayscale?amount=SJwG%2FvUvYptH84e03i2QGg%3D%3D" target="_blank">Buy 2 Designs</a>
+    </div>
+    <div class="design" style="grid-column: span 3;">
+      <h3>Buy All 3 Designs - ₹5000</h3>
+      <a href="https://razorpay.me/@grayscale?amount=Hrc9gAOPjYioEfEfn0m7SA%3D%3D" target="_blank">Buy All</a>
+    </div>
+  </section>
+</body>
+</html>

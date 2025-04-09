@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grayscale Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: #fff;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: #222;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    input {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+    }
+    button {
+      padding: 0.5rem;
+      background: #fff;
+      color: #000;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form id="authForm">
+    <h2>Enter Access Password</h2>
+    <input type="text" id="passwordInput" placeholder="Enter Password" required />
+    <button type="submit">Enter</button>
+  </form>
+
+  <script>
+    const validPasswords = [
+      "OB12ED", "S3DIAN", "OB45IN", "O7ED89", "8OBSID", "OB12N3",
+      "DI4A67", "SO98BE", "ED19AN", "N10OB5", "OB2345", "OBSID1",
+      "O456DN", "B7EDAN", "OB83ED", "OBSID9", "SOB91E", "O83NED",
+      "OBSD12", "OB56DN", "OB65ED", "OBED34", "OB23SD", "OBSD45",
+      "OBED67", "OBSI89", "OBS12N", "OB43ED", "OBSD76", "OB91DN",
+      "OB67ED", "OB24SI", "OB43NA", "OBDI34", "OB45IA", "OBSD98",
+      "OB38SD", "OBSD99", "OBS87D", "OB76DE", "OBED23", "OB21IN",
+      "OBSD13", "OBSI77", "OBS54N", "OBE64N", "OBD78I", "OBED32",
+      "OBSD44", "OBSID6", "OBS93A", "OB22DN", "OB64ED", "OBED78",
+      "OBSI22", "OBSD28", "OBS73N", "OB89IA", "OBS12E", "OB47IN",
+      "OB75ED", "OB52SD", "OB31DN", "OBS33N", "OB94IA", "OBSD66",
+      "OBED11", "OBSI05", "OB83SI", "OBS20A", "OB41ED", "OB33NA",
+      "OBE09A", "OBSD01", "OB78SI", "OBS09N", "OBSD04", "OB34ED",
+      "OBS02D", "OBSD36", "OBS31N", "OB61ED", "OBSD19", "OBED30",
+      "OBSI90", "OBSD82", "OB51DN", "OBED14", "OB28ED", "OBS70N",
+      "OB92ED", "OB43DN", "OBED45", "OBS21N", "OB76SI", "OBSI44",
+      "OBDI12", "OBSI62", "OB12NA", "OB19ED", "OBSI15", "OB39DN"
+    ];
+
+    document.getElementById("authForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const input = document.getElementById("passwordInput").value.trim();
+      if (validPasswords.includes(input)) {
+        localStorage.setItem("grayscale_password", input);
+        window.location.href = "form.html";
+      } else {
+        alert("Invalid password. Try again.");
+      }
+    });
+  </script>
+</body>
+</html>

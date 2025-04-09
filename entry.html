@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OBSEDIAN Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin-bottom: 2rem;
+    }
+    form {
+      background: #222;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 4px;
+      border: none;
+    }
+    button {
+      padding: 0.75rem;
+      width: 100%;
+      background: #fff;
+      color: #111;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .error {
+      color: red;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to OBSEDIAN</h1>
+  <form id="entryForm">
+    <input type="text" id="password" placeholder="Enter your password" required />
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <input type="text" id="address" placeholder="Address" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="text" id="enteredPassword" placeholder="Re-enter Password" required />
+    <div class="error" id="errorMsg"></div>
+    <button type="submit">Enter</button>
+  </form>
+
+  <script>
+    const validPasswords = [
+      "OBSE98", "3OBSDI", "OB56AN", "OB7D1N", "OBS812", "OB9IAN", "O4SED1", "OB1032", "8OBIAN", "OB12DN",
+      "OBSE42", "OBSI54", "0BS8AN", "O5BDN1", "OB7S84", "OB12N3", "7OBSIA", "OBS12N", "OB183D", "O8BSIAN",
+      "OB492N", "O3BS84", "OB129A", "OB5D2N", "0BSIAN", "OB1S99", "O2BDIN", "O9BSN4", "OB201A", "OBS009",
+      "OB0001", "OBS9N1", "OB8201", "OB91N3", "OBDIA3", "O6BIAN", "OB52N2", "OB7123", "O2BS98", "OBS453",
+      "OB1201", "O3BD2N", "O1BSI4", "OBS556", "OBS872", "O4BI92", "OB0D12", "OBI234", "O5BN93", "OBSA81",
+      "OB1984", "OB2024", "OBS44N", "OB9999", "O8BS00", "OB2312", "OB64AN", "OBS009", "OB88DN", "OBS712",
+      "O7BSIN", "OBXD12", "OBAN45", "OBS32N", "O6BSDI", "OB2121", "OBN812", "O3BS4N", "OB9182", "OBS202",
+      "OBS211", "OBS765", "OB5555", "OBI452", "OB9831", "OBS849", "O2BDIA", "OB1618", "OB3210", "O6BI78",
+      "O3B1AN", "OBAN32", "OBIAN4", "O4BSD2", "OB4032", "O8BN54", "OBSAN8", "OBD982", "OBS892", "OBS452",
+      "OBS943", "OB9123", "O2BN90", "OBXIAN", "OBL983", "OBVA91", "OBZ122", "O1BIAN", "O3BNIA", "OBS902",
+      "O4BS99", "OB3321", "OBS100"
+    ];
+
+    document.getElementById('entryForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const password = document.getElementById('password').value.trim();
+      const enteredPassword = document.getElementById('enteredPassword').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      if (!validPasswords.includes(password)) {
+        document.getElementById('errorMsg').innerText = "Invalid password!";
+        return;
+      }
+
+      if (password !== enteredPassword) {
+        document.getElementById('errorMsg').innerText = "Passwords do not match!";
+        return;
+      }
+
+      const data = {
+        data: {
+          Password: password,
+          Name: name,
+          Phone: phone,
+          Address: address,
+          Email: email
+        }
+      };
+
+      try {
+        await fetch("https://sheetdb.io/api/v1/w5bee4lad1cyz", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        window.location.href = "index.html";
+      } catch (err) {
+        document.getElementById('errorMsg').innerText = "Something went wrong!";
+      }
+    });
+  </script>
+
+</body>
+</html>

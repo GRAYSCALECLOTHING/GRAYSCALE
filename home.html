@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grayscale - Home</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background-color: #fff; color: #111; }
+    header { text-align: center; padding: 2rem 0; font-size: 2.5rem; font-weight: bold; }
+    .hero {
+      background: url('https://via.placeholder.com/800x500?text=T-Shirt+Hero+Image') no-repeat center center/cover;
+      height: 80vh;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .product-card {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product-card h3 { margin: 1rem 0 0.5rem; }
+    .product-card p { margin-bottom: 1rem; color: #333; }
+    .product-card button {
+      padding: 0.5rem 1.2rem;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #111;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>grayscale</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="designs.html">Our Designs</a>
+  </nav>
+
+  <section class="hero"></section>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x300?text=Design+1" alt="Design 1">
+      <h3>Minimal Vibes</h3>
+      <p>Clean and subtle design for daily comfort and style.</p>
+      <button onclick="location.href='designs.html'">Shop Now</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x300?text=Design+2" alt="Design 2">
+      <h3>Bold Edge</h3>
+      <p>A louder look for those who love standing out.</p>
+      <button onclick="location.href='designs.html'">Shop Now</button>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300x300?text=Design+3" alt="Design 3">
+      <h3>Street Fusion</h3>
+      <p>Streetwear meets art in this bold graphic piece.</p>
+      <button onclick="location.href='designs.html'">Shop Now</button>
+    </div>
+  </section>
+</body>
+</html>
